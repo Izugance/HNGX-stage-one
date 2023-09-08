@@ -18,7 +18,7 @@ app.get("/api", (req, res) => {
   res.status(200).json({
     slack_name: req.query.slack_name ? req.query.slack_name : "not_passed",
     current_day: days[today.getDay()],
-    utc_time: today,
+    utc_time: today.toISOString().replace(".", ":"),
     track: req.query.track ? req.query.track : "not_passed",
     github_file_url:
       "https://github.com/Izugance/HNGX-stage-one/blob/master/app.js",
