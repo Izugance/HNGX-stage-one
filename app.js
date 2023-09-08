@@ -4,10 +4,6 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-  // Controller that returns JSON data of the slack name and
-  // if passed, the current day, utc_time, and the response
-  // status track query
-  // parameters
   let today = new Date();
   let days = new Array(
     "Sunday",
@@ -24,7 +20,10 @@ app.get("/", (req, res) => {
     current_day: days[today.getDay()],
     utc_time: today,
     track: req.query.track ? req.query.track : "not_passed",
-    status: 200,
+    github_file_url:
+      "https://github.com/Izugance/HNGX-stage-one/blob/master/app.js",
+    github_repo_url: "https://github.com/Izugance/HNGX-stage-one/",
+    status_code: 200,
   });
 });
 
