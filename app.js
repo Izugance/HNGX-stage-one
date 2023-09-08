@@ -3,7 +3,7 @@ const express = require("express");
 
 const app = express();
 
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   let today = new Date();
   let days = new Array(
     "Sunday",
